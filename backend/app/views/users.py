@@ -19,6 +19,15 @@ def get_user(id):
     else:
         return jsonify({'message': 'No such user','data':{}}),404
 
+
+def get_user_by_username(username):
+    try:
+        return Users.query.filter(Users.username == username).one()
+    except Exception as e:
+        print(e)
+        return None
+
+
 def delete_user(id):
     user = Users.query.get(id)
     if not user:
