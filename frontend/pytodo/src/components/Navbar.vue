@@ -7,15 +7,15 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
+        <b-nav-item href="#"><router-link to="/">Home</router-link></b-nav-item>
         <b-nav-item href="#">To-Do's</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">Login</b-nav-item>
+      
+        <b-nav-item href="#"><router-link to="/about">About</router-link></b-nav-item>
         <b-nav-item href="#">Register</b-nav-item>
-        <b-nav-item href="#" disabled>Logout</b-nav-item>
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template v-slot:button-content>
