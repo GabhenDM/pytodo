@@ -16,7 +16,7 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_PASS}"
       MYSQL_DATABASE: "${MYSQL_DB}"
   web-server:
-    build: ./backend
+    build: .
     depends_on:
       - db
     links:

@@ -9,6 +9,8 @@ def get_users():
     users = Users.query.all()
     if users:
         result = users_schema.dump(users)
+        for user in result:
+            print(user)
         return jsonify({'message':'Successfully fetched users','data':result}),200
 
 def get_user(id):
