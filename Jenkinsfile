@@ -3,6 +3,7 @@
             sonarkey = "${sonarkey}"
             sonarurl = "${sonarurl}"
             devurl = "${devurl}"
+            sonarpath = "${sonarpath}"
         }
         agent any
 
@@ -17,7 +18,7 @@
 
             stage('Executando o sonarqube') {
                 steps {
-                    sh 'sonar-scanner -Dsonar.projectKey=atap -Dsonar.sources=. -Dsonar.host.url='+ sonarurl + ' -Dsonar.login=' + sonarkey
+                    sh  sonarpath + ' -Dsonar.projectKey=atap -Dsonar.sources=. -Dsonar.host.url='+ sonarurl + ' -Dsonar.login=' + sonarkey
                 }
             }
 
