@@ -37,7 +37,7 @@
                 steps {
                     script {
                         try {
-                            sh 'docker-compose --env-file=.env -d up --build'
+                            sh 'docker-compose --env-file=.env up -d --build'
                         } catch (Exception e) {
                             slackSend (color: 'error', message: "[ FALHA ] Não foi possivel subir o ambiente de dev - ${BUILD_URL} em ${currentBuild.duration}s", tokenCredentialId: 'slack-token-atap')
                             sh "echo $e"
